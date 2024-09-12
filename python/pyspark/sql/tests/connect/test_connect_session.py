@@ -280,7 +280,7 @@ class SparkConnectSessionTests(ReusedConnectTestCase):
 
         # Should not throw any error
         session.stop()
-    
+
     def test_session_plan_cache(self):
         # SPARK-49610: session plan cache uses plan id.
 
