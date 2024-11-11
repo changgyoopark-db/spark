@@ -315,7 +315,7 @@ class SparkConnectSessionHolderSuite extends SharedSparkSession {
         val cachedRelations = sessionHolder.getPlanCache.get.asMap().keySet().asScala
         assert(cachedRelations.size == expectedCachedRelations.size)
         expectedCachedRelations.foreach(relation =>
-          assert(cachedRelations.contains(relation.getCommon.getPlanId)))
+          assert(cachedRelations.contains(("", relation.getCommon.getPlanId))))
       case None => assert(sessionHolder.getPlanCache.isEmpty)
     }
   }
